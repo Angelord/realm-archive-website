@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
+import Games from '../components/Games.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import FooterPattern from '../components/FooterPattern.astro';
+import LineSeparator from '../components/LineSeparator.astro';
+import About from '../components/About.astro';
+---
+
+<Layout title="Realm Archive">
+  <main class="container">
+    <Title />
+    <About />
+    <LineSeparator header="Games" />
+    <Games />
+    <LineSeparator header="Contact" />
+    <Contact />
+  </main>
+  <FooterPattern />
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1056px;
+    margin: 0 auto;
+    padding: 0 var(--spacing);
+  }
+
+  .heading {
+    text-align: center;
+    margin: 96px 0 48px;
+  }
+</style>

@@ -1,0 +1,111 @@
+---
+export interface Props {
+  title: string;
+  actions: Record<string, string>;
+}
+
+const { title, actions } = Astro.props;
+---
+
+<div class="card">
+  <div class="preview">
+    <slot name="header" />
+  </div>
+  <div class="info">
+    <h3 class="title">{title}</h3>
+    <p class="description">
+      <slot />
+    </p>
+    <div class="actions">
+      {
+        Object.entries(actions).map(([text, href]) => (
+          <div class="action-wrapper">
+            <a class="action-button" href={href} target="_blank">
+              {text}
+            </a>
+            <img class="action-outline" src="button-outline.png" />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    display: flex;
+    gap: var(--spacing);
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+
+  .preview {
+    flex-basis: 544px;
+    max-width: 544px;
+    flex-shrink: 1;
+    aspect-ratio: 16 / 9;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .info {
+    max-width: 440px;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+  }
+
+  .title {
+    font-size: 32px;
+    margin: 0;
+  }
+
+  .description {
+    margin: 0;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--spacing) / 2);
+  }
+
+  .action-wrapper {
+    height: 45px;
+  }
+
+  .action-button {
+    color: var(--font-color);
+    font-family: var(--font-family-heading);
+    line-height: 24px;
+    padding: 8px 24px;
+    font-weight: 900;
+    font-size: 16px;
+    appearance: none;
+    border: unset;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+  }
+
+  .action-button:hover {
+    background-image: url('/button-selection.png');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
+
+  .action-outline {
+    position: relative;
+    top: -50px;
+    width: 132px;
+    height: auto;
+    z-index: -1;
+    opacity: 0.7;
+  }
+</style>

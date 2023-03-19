@@ -1,0 +1,71 @@
+---
+import Itchio from '../icons/Itchio.astro';
+import Steam from '../icons/Steam.astro';
+import YouTube from '../icons/YouTube';
+---
+
+<footer>
+  <div class="container">
+    <div class="socials">
+      <a
+        class="social"
+        href="https://store.steampowered.com/publisher/RealmArchive"
+        title="Steam"
+        target="_blank"
+      >
+        <Steam />
+      </a>
+      <a class="social" href="https://almoxis.itch.io/" title="itch.io" target="_blank">
+        <Itchio />
+      </a>
+      <a
+        class="social"
+        href="https://www.youtube.com/channel/UCMQPflwGjORDwGCh5XNlLxw"
+        title="YouTube"
+        target="_blank"
+      >
+        <YouTube />
+      </a>
+    </div>
+  </div>
+  <div class="copyright">© 2023 Realm Archive</div>
+</footer>
+
+<style>
+  .container {
+    max-width: 1056px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: var(--spacing);
+    gap: var(--spacing);
+  }
+
+  .copyright {
+    position: relative;
+    bottom: 16px;
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    flex-grow: 10;
+  }
+
+  .social {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.1s;
+  }
+
+  .social:hover {
+    --background-color: #f8f8f8;
+  }
+</style>

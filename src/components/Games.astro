@@ -1,0 +1,36 @@
+---
+import Game from '../components/Game.astro';
+---
+
+<Game
+  title="Death Must Die"
+  actions={{
+    WISHLIST: 'https://store.steampowered.com/app/2334730/Death_Must_Die/',
+    DISCORD: 'https://discord.com/invite/bQvG6JB8sc',
+  }}
+>
+  <img src="/game-death.png" class="preview-image" alt="Death Must Die" slot="header" />
+  Descend the nether in search of Death himself! Wield divine powers to slay his hordes of
+  minions. Unlock new heroes, collect powerful items and create game-breaking synergies in
+  this roguelite hack and slash survivors game.
+</Game>
+
+<Game
+  title="Kamifuda"
+  actions={{
+    STEAM: 'https://store.steampowered.com/app/1937720/Kamifuda/',
+    DISCORD: 'https://discord.com/invite/XZybYGpGJu',
+  }}
+>
+  <img src="/game-kamifuda.png" class="preview-image" alt="Kamifuda" slot="header" />
+  Master the eldritch art of Kamifuda—channeling long dead powers within arcane cards—in this
+  visual novel and deck builder game.
+</Game>
+
+<style>
+  .preview-image {
+    border: 8px solid white;
+    box-shadow: 5px 5px 9px black;
+    transform: rotate(1deg);
+  }
+</style>

@@ -1,0 +1,122 @@
+---
+import '@fontsource/pt-serif';
+import '@fontsource/bluu-next';
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Video game developer" />
+    <meta
+      name="keywords"
+      content="real marchive, realmarchive, gamedev, kamifuda, death must die"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script is:inline>
+      document.documentElement.dataset.theme = localStorage.getItem('theme') ?? 'dark';
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  @font-face {
+    font-family: PtSerif;
+    src: url('/fonts/PtSerifRegular_Font.ttf') format('ttf');
+  }
+
+  @font-face {
+    font-family: BluuNext;
+    src: url('/fonts/BluuNext-Bold.otf') format('otf');
+  }
+
+  :root {
+    --spacing: 24px;
+    --theme: #242424;
+    --backdrop-color: rgba(247, 247, 247, 0.54);
+    --shadow-color: rgba(0, 0, 0, 0.12);
+    --font-color: rgba(0, 0, 0, 0.87);
+    --font-color-contrast: rgb(7, 7, 7);
+    --font-color-secondary: rgba(0, 0, 0, 0.6);
+    --font-family-base: 'PT Serif', sans-serif;
+    --font-family-heading: 'Bluu Next', sans-serif;
+    --border-radius: 8px;
+    background-image: url('/background.png');
+    background-repeat: repeat;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--font-family-base);
+    color: var(--font-color);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-heading);
+    font-weight: 600;
+  }
+
+  button {
+    background-color: unset;
+    color: unset;
+    appearance: none;
+    padding: unset;
+    border: unset;
+    margin: unset;
+  }
+
+  iframe,
+  img,
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .secondary,
+  small {
+    color: var(--font-color-secondary);
+  }
+
+  small {
+    font-size: 14px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .primary {
+    fill: var(--theme);
+  }
+
+  .secondary {
+    fill: var(--shadow-color);
+  }
+</style>

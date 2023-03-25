@@ -8,9 +8,11 @@ const { title, actions } = Astro.props;
 ---
 
 <div class="card">
-  <div class="preview">
-    <slot name="header" />
-  </div>
+  <game-preview data-link={Object.values(actions)[0]}>
+    <div class="preview">
+      <slot name="header" />
+    </div>
+  </game-preview>
   <div class="info">
     <h3 class="title">{title}</h3>
     <p class="description">
@@ -30,6 +32,21 @@ const { title, actions } = Astro.props;
     </div>
   </div>
 </div>
+
+<script>
+  class GamePreview extends HTMLElement {
+    constructor() {
+      super();
+      const link = this.dataset.link;
+      const wrapper = this.querySelector('.preview');
+      wrapper?.addEventListener('click', () => {
+        window.open(link);
+      });
+    }
+  }
+
+  customElements.define('game-preview', GamePreview);
+</script>
 
 <style>
   .card {

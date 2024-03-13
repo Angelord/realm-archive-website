@@ -5,7 +5,7 @@ import Game from '../components/Game.astro';
 <Game
   title="Death Must Die"
   actions={{
-    WISHLIST: 'https://store.steampowered.com/app/2334730/Death_Must_Die/',
+    STEAM: 'https://store.steampowered.com/app/2334730/Death_Must_Die/',
     DISCORD: 'https://discord.com/invite/Wp4ynGn8m3',
   }}
 >
@@ -29,8 +29,11 @@ import Game from '../components/Game.astro';
 
 <style>
   .preview-image {
-    border: 8px solid white;
     box-shadow: 5px 5px 9px black;
-    transform: rotate(1deg);
+    transition: all 0.5s;
+  }
+
+  .preview-image:hover {
+    transform: scale(1.03);
   }
 </style>

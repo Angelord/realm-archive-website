@@ -1,8 +1,23 @@
 <div class="container">
-  <img class="logo fade-in" src="/logo.png" />
+  <div class="logo fade-in" />
 </div>
 
 <style>
+  .logo {
+    background-image: url('logo.png');
+
+    width: 350px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .logo {
+      background-image: url('logo-dark.png');
+    }
+  }
+
   .container {
     display: flex;
     justify-content: center;

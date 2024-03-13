@@ -1,7 +1,8 @@
 ---
-import Itchio from '../icons/Itchio.astro';
 import Steam from '../icons/Steam.astro';
-import YouTube from '../icons/YouTube';
+import YouTube from '../icons/YouTube.astro';
+import Twitter from '../icons/Twitter.astro';
+import Mail from '../icons/Mail.astro';
 ---
 
 <footer>
@@ -15,9 +16,6 @@ import YouTube from '../icons/YouTube';
       >
         <Steam />
       </a>
-      <a class="social" href="https://almoxis.itch.io/" title="itch.io" target="_blank">
-        <Itchio />
-      </a>
       <a
         class="social"
         href="https://www.youtube.com/channel/UCMQPflwGjORDwGCh5XNlLxw"
@@ -26,9 +24,25 @@ import YouTube from '../icons/YouTube';
       >
         <YouTube />
       </a>
+      <a
+        class="social"
+        href="https://twitter.com/RealmArchive"
+        title="Twitter"
+        target="_blank"
+      >
+        <Twitter />
+      </a>
+      <a
+        class="social"
+        href="mailto:realmarchivegames@gmail.com"
+        title="Mail"
+        target="_blank"
+      >
+        <Mail />
+      </a>
     </div>
   </div>
-  <div class="copyright">© 2023 Realm Archive</div>
+  <div class="copyright">© 2024 Realm Archive</div>
 </footer>
 
 <style>
@@ -53,19 +67,25 @@ import YouTube from '../icons/YouTube';
 
   .socials {
     display: flex;
+    height: 72px;
+    align-items: flex-end;
     justify-content: center;
     flex-grow: 10;
   }
 
   .social {
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
+    margin: 0 12px;
     border-radius: 50%;
-    transition: background-color 0.1s;
+    transition: all 0.3s;
   }
 
   .social:hover {
     --background-color: #f8f8f8;
+    width: 72px;
+    height: 72px;
+    margin: 0;
   }
 </style>

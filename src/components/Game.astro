@@ -25,7 +25,6 @@ const { title, actions } = Astro.props;
             <a class="action-button" href={href} target="_blank">
               {text}
             </a>
-            <img class="action-outline" src="button-outline.png" />
           </div>
         ))
       }
@@ -66,6 +65,7 @@ const { title, actions } = Astro.props;
     background-color: transparent;
     position: relative;
     cursor: pointer;
+    overflow: hidden;
   }
 
   .info {
@@ -92,29 +92,38 @@ const { title, actions } = Astro.props;
   }
 
   .action-wrapper {
-    height: 45px;
   }
 
   .action-button {
-    color: var(--font-color);
+    background: #e1e1e1;
     font-family: var(--font-family-heading);
     line-height: 24px;
-    padding: 8px 24px;
+    padding: 8px 0px;
+    min-width: 140px;
     font-weight: 900;
     font-size: 16px;
     appearance: none;
-    border: unset;
+    border: 1px solid transparent;
     margin-left: auto;
     margin-right: auto;
     display: block;
     text-align: center;
+    transition: all 0.3s;
   }
 
   .action-button:hover {
-    background-image: url('/button-selection.png');
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-    background-position: 50%;
+    letter-spacing: 2px;
+    border: 1px solid #000000;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .action-button {
+      background: #333333;
+    }
+
+    .action-button:hover {
+      border: 1px solid #ffffff;
+    }
   }
 
   .action-outline {
